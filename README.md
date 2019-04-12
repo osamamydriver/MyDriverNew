@@ -111,4 +111,8 @@ An app that can be used to make people who needs a driver with a car find it eas
    - Drivers view controller
       - (Read/GET) read riders location
       - (create/location)create drivers location
+## Video Walkthrough
 
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/k90zxXyWVb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
