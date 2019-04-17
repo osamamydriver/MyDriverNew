@@ -16,6 +16,7 @@
 		BA1F867A22597ED8002F6EB7 /* mydriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F867922597ED8002F6EB7 /* mydriverTests.swift */; };
 		BA1F868522597ED8002F6EB7 /* mydriverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F868422597ED8002F6EB7 /* mydriverUITests.swift */; };
 		BAB57C302259888E00AB740D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB57C2F2259888E00AB740D /* LoginViewController.swift */; };
+		BAE558712266ABCC0048A36A /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE558702266ABCC0048A36A /* RiderViewController.swift */; };
 		D1387287D68D9BA097BF7166 /* Pods_mydriverUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED925E6B0A1BC1E40AF9233 /* Pods_mydriverUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		BA1F868422597ED8002F6EB7 /* mydriverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mydriverUITests.swift; sourceTree = "<group>"; };
 		BA1F868622597ED8002F6EB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB57C2F2259888E00AB740D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BAE558702266ABCC0048A36A /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		E0FD371BE77EB02BB8039893 /* Pods_mydriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mydriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				BA1F866D22597ED7002F6EB7 /* LaunchScreen.storyboard */,
 				BA1F867022597ED7002F6EB7 /* Info.plist */,
 				BAB57C2F2259888E00AB740D /* LoginViewController.swift */,
+				BAE558702266ABCC0048A36A /* RiderViewController.swift */,
 			);
 			path = mydriver;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB57C302259888E00AB740D /* LoginViewController.swift in Sources */,
+				BAE558712266ABCC0048A36A /* RiderViewController.swift in Sources */,
 				BA1F866522597ED5002F6EB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

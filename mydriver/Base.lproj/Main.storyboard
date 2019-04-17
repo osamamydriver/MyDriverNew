@@ -141,11 +141,75 @@
                         <outlet property="signupbutton" destination="LBG-e2-RhB" id="E5l-nt-vaR"/>
                         <outlet property="switch" destination="1Cl-ab-MeR" id="v21-Dx-wqk"/>
                         <outlet property="userNameTextfield" destination="A6w-M1-ztQ" id="Hnd-KF-4kd"/>
+                        <segue destination="vez-4T-VJk" kind="show" identifier="loginRider" id="0mz-or-b0a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
+        </scene>
+        <!--Rider View Controller-->
+        <scene sceneID="8Qg-wG-FYE">
+            <objects>
+                <viewController id="vez-4T-VJk" customClass="RiderViewController" customModule="mydriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xMJ-Qc-m2R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqI-NY-XkI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="H43-2T-96I"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="My Driver" id="6ti-ty-Obc">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="2pb-5z-yVA">
+                                            <connections>
+                                                <action selector="logoutButton:" destination="vez-4T-VJk" id="2MA-sL-Me0"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="logoutRider" id="mov-Yx-Txs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWP-4f-SqP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="OQh-Gi-RLW"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blR-6u-VIx">
+                                <rect key="frame" x="165.5" y="619" width="83" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="cEd-L8-S2o"/>
+                                    <constraint firstAttribute="height" constant="30" id="u37-cy-kfB"/>
+                                </constraints>
+                                <state key="normal" title="Call a Driver"/>
+                                <connections>
+                                    <action selector="callDriver:" destination="vez-4T-VJk" eventType="touchUpInside" id="yB6-Zi-Ktt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="blR-6u-VIx" firstAttribute="centerX" secondItem="xMJ-Qc-m2R" secondAttribute="centerX" id="9At-Te-AxM"/>
+                            <constraint firstItem="ZqI-NY-XkI" firstAttribute="top" secondItem="kyz-FR-cMh" secondAttribute="top" id="AGt-W1-0Eo"/>
+                            <constraint firstItem="blR-6u-VIx" firstAttribute="top" secondItem="aWP-4f-SqP" secondAttribute="bottom" constant="226" id="JzY-kG-KHQ"/>
+                            <constraint firstItem="ZqI-NY-XkI" firstAttribute="leading" secondItem="kyz-FR-cMh" secondAttribute="leading" id="W3G-yp-HMt"/>
+                            <constraint firstItem="aWP-4f-SqP" firstAttribute="trailing" secondItem="kyz-FR-cMh" secondAttribute="trailing" id="aIW-kK-gmd"/>
+                            <constraint firstItem="ZqI-NY-XkI" firstAttribute="trailing" secondItem="kyz-FR-cMh" secondAttribute="trailing" id="chO-d1-jWp"/>
+                            <constraint firstItem="aWP-4f-SqP" firstAttribute="top" secondItem="ZqI-NY-XkI" secondAttribute="bottom" id="fKK-Wo-ggV"/>
+                            <constraint firstItem="aWP-4f-SqP" firstAttribute="leading" secondItem="kyz-FR-cMh" secondAttribute="leading" id="xaL-SP-srA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kyz-FR-cMh"/>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="aWP-4f-SqP" id="hlK-AO-udj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26P-Nj-2rZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="105.80357142857143"/>
         </scene>
     </scenes>
 </document>

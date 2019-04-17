@@ -67,12 +67,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             if let errorString = error as? String{
                                 self.displayallert(title: "error signing up ", message: errorString)
                             }
+                        }else{
+                            self.performSegue(withIdentifier: "loginRider", sender: self)
                         }
                     }
                 }else {
                     PFUser.logInWithUsername(inBackground: user.username!, password: user.password!) { (user,error) in
                         if user != nil{
-                            print("yaaay")
+                            self.performSegue(withIdentifier: "loginRider", sender: self)
                         }else{
                             self.displayallert(title: "no such user", message: "the username or password wrong")
                         }
@@ -112,5 +114,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    override func viewDidAppear(_ animated: Bool) {
+        if(PFUser.current() != nil){
+            self.performSegue(withIdentifier: "loginRider", sender: self)
+        }
+    }
 
 }
