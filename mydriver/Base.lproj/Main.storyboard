@@ -181,7 +181,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blR-6u-VIx">
                                 <rect key="frame" x="165.5" y="619" width="83" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="cEd-L8-S2o"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="cEd-L8-S2o"/>
                                     <constraint firstAttribute="height" constant="30" id="u37-cy-kfB"/>
                                 </constraints>
                                 <state key="normal" title="Call a Driver"/>
@@ -204,6 +204,7 @@
                         <viewLayoutGuide key="safeArea" id="kyz-FR-cMh"/>
                     </view>
                     <connections>
+                        <outlet property="callADriverButton" destination="blR-6u-VIx" id="Bwb-Li-iAb"/>
                         <outlet property="map" destination="aWP-4f-SqP" id="hlK-AO-udj"/>
                     </connections>
                 </viewController>
