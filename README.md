@@ -121,3 +121,12 @@ An app that can be used to make people who needs a driver with a car find it eas
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/k90zxXyWVb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+
+Here's a walkthrough of implemented user stories in phase 2:
+
+<img src='http://g.recordit.co/GP5ImxLVTm.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+
