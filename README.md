@@ -25,14 +25,18 @@ An app that can be used to make people who needs a driver with a car find it eas
 
 **Required Must-have Stories**
 
-* User can login and signup
-* User can log out
-* User can stay logged in
-* User can see his location
-* User can ask for driver
-* User can cancel his driver request
+[x] User can login and signup
+[x] User can log out
+[x] User can stay logged in
+[x] User can see his location
+[x] User can ask for driver
+[x] User can cancel his driver request
 * Driver can accept requests
-
+* Rider can see driver location
+* Driver can cancel requests
+* Driver can start trip
+* Driver can cancel trip
+* Rider can see how much he ows driver
 **Optional Nice-to-have Stories**
 
 * User can chat with driver
