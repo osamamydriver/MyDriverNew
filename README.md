@@ -37,6 +37,7 @@ An app that can be used to make people who needs a driver with a car find it eas
 * Driver can start trip
 * Driver can cancel trip
 * Rider can see how much he ows driver
+
 **Optional Nice-to-have Stories**
 
 * User can chat with driver
