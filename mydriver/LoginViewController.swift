@@ -68,13 +68,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 self.displayallert(title: "error signing up ", message: errorString)
                             }
                         }else{
-                            self.performSegue(withIdentifier: "loginRider", sender: self)
+                            if  self.`switch`.isOn == true {
+                                self.performSegue(withIdentifier: "loginDriver", sender: self)
+                            }else
+                            {
+                                self.performSegue(withIdentifier: "loginRider", sender: self)
+                            }
                         }
+                            
                     }
                 }else {
                     PFUser.logInWithUsername(inBackground: user.username!, password: user.password!) { (user,error) in
-                        if user != nil{
-                            self.performSegue(withIdentifier: "loginRider", sender: self)
+                        if let user = user{
+                            if  user["isdriver"]! as! Bool == true {
+                                self.performSegue(withIdentifier: "loginDriver", sender: self)
+                            }else
+                            {
+                                self.performSegue(withIdentifier: "loginRider", sender: self)
+                            }
                         }else{
                             self.displayallert(title: "no such user", message: "the username or password wrong")
                         }
@@ -116,8 +127,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     */
     override func viewDidAppear(_ animated: Bool) {
         if(PFUser.current() != nil){
-            self.performSegue(withIdentifier: "loginRider", sender: self)
+            if  PFUser.current()!["isdriver"]! as! Bool == true {
+                self.performSegue(withIdentifier: "loginDriver", sender: self)
+            }else
+            {
+                self.performSegue(withIdentifier: "loginRider", sender: self)
+            }
         }
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
 }
