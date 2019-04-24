@@ -52,30 +52,34 @@ class RequestsTableViewController: UITableViewController,CLLocationManagerDelega
                 } else if let objects = objects {
                     self.usernames.removeAll()
                     self.locations.removeAll()
-                    print("Successfully retrieved \(objects.count) scores.")
+                   // print("Successfully retrieved \(objects.count) scores.")
                     
                     for object in objects {
-                        if let username = object["username"] as? String {
-                            self.usernames.append(username)
-                        }
-                        if let returnedlocation = object["location"] as? PFGeoPoint{
+                        if object["driverResponded"] == nil {
                             
-                            let requestlocation = CLLocationCoordinate2DMake(returnedlocation.latitude, returnedlocation.longitude)
-                            self.locations.append(requestlocation)
-                            let requestcllocation = CLLocation(latitude: requestlocation.latitude, longitude: requestlocation.longitude)
-                            let drivercllocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-                            let distance = drivercllocation.distance(from: requestcllocation)
-                            self.distances.append(distance/1000)
+                        
+                            if let username = object["username"] as? String {
+                                self.usernames.append(username)
+                            }
+                            if let returnedlocation = object["location"] as? PFGeoPoint{
+                            
+                                let requestlocation = CLLocationCoordinate2DMake(returnedlocation.latitude, returnedlocation.longitude)
+                                self.locations.append(requestlocation)
+                                let requestcllocation = CLLocation(latitude: requestlocation.latitude, longitude:   requestlocation.longitude)
+                                let drivercllocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+                                let distance = drivercllocation.distance(from: requestcllocation)
+                                self.distances.append(distance/1000)
+                            }
                         }
                     }
                     self.tableView.reloadData()
-                    print(self.locations)
-                    print(self.usernames)
+                   // print(self.locations)
+                    //print(self.usernames)
                     
                 }
             
 
-            print("locations = \(location.latitude) \(location.longitude)")
+           // print("locations = \(location.latitude) \(location.longitude)")
             
         }
 
@@ -165,7 +169,10 @@ class RequestsTableViewController: UITableViewController,CLLocationManagerDelega
         if( segue.identifier == "logoutDriver" ){
             PFUser.logOutInBackground()
         }else if ( segue.identifier == "showViewRequests" ){
-            
+            if let destination = segue.destination as? DriverViewController {
+                destination.requestLocation = locations[(tableView.indexPathForSelectedRow?.row)!]
+                destination.requestUsername = usernames[(tableView.indexPathForSelectedRow?.row)!]
+            }
         }
     }
 
